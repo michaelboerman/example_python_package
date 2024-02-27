@@ -7,7 +7,7 @@ packages = ["src/example_package_michaelboerman"]
 
 [project]
 name = "example_package_michaelboerman"
-version = "0.1.3"
+version = "0.1.4"
 authors = [
   { name="Michael Boerman", email="michaelboerman@hey.com" },
 ]
