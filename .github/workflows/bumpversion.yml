@@ -22,7 +22,7 @@ jobs:
         run: pip install bump_my_version
 
       - name: Bump version
-        run: bump-my-version ${{ inputs.version-type }} --allow-dirty --verbose
+        run: bump-my-version bump ${{ inputs.version-type }} --allow-dirty --verbose
 
       - name: Commit and push changes
         run: |
