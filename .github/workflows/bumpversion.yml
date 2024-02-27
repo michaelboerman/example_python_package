@@ -1,0 +1,35 @@
+name: Bump Version
+
+on:
+  release:
+    types: [created]
+
+  workflow_call:
+    inputs:
+      version-type:
+        required: true
+        type: string
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install bump_my_version
+        run: pip install bump_my_version
+
+      - name: Bump version
+        run: bump-my-version ${{ inputs.version-type }} --allow-dirty --verbose
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "Michael Boerman"
+          git config --global user.email "michaelboerman@hey.com"
+          git add .
+          git commit -m "Bump version for latest release"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
