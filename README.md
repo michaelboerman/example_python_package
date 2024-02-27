@@ -30,3 +30,8 @@ Use it like this:
 >>>example.add_one(4)
 5
 ```
+
+```python
+>>>example.subtract_one(4)
+3
+```
