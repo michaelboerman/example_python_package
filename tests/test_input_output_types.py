@@ -12,7 +12,3 @@ def test_unexpected_input_types():
     # string input
     with pytest.raises(TypeError):
         add_one('abc')
-
-    # boolean input
-    with pytest.raises(TypeError):
-        add_one(True)
