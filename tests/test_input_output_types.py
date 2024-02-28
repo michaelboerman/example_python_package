@@ -1,5 +1,5 @@
 import pytest
-from example_package_michaelboerman.example import add_one
+from src.example_package_michaelboerman.example import add_one
 
 def test_expected_output_types():
     
